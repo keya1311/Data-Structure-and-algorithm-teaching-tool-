@@ -1,25 +1,13 @@
 function SiteHeader() {
   return (
     <header className="site-header">
-      <a className="brand" href="/">
-        Algora
-      </a>
-
+      <a className="skip-link" href="#main-content">Skip to content</a>
       <nav aria-label="Main navigation">
-        <a className="nav-link active" href="/">
-          Home
-        </a>
-        <a className="nav-link" href="#topics">
-          Topics
-        </a>
-        <a className="nav-link" href="#progress">
-          Progress
-        </a>
+        <a className="nav-link active" href="/" aria-current="page">Home</a>
+        <a className="nav-link" href="#topics">Algorithms</a>
+        <a className="nav-link" href="#binary-search">Binary search</a>
       </nav>
-
-      <button className="account-button" type="button">
-        Sign in
-      </button>
+      <a className="header-action" href="#topics">Explore concepts <span aria-hidden="true">→</span></a>
     </header>
   )
 }
