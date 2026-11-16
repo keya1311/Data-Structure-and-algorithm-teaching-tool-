@@ -29,9 +29,6 @@ h1 span { white-space: nowrap; }
 .cell-index { font-size: 12px; }
 .array-cell strong { font-size: clamp(30px, 7vw, 100px); font-weight: 500; text-align: center; margin: 20px 0; letter-spacing: -.06em; }
 .cell-note { min-height: 14px; font-size: 10px; text-align: center; letter-spacing: .06em; }
-.cell-2 { background: #222; color: #fff; }
-.cell-0, .cell-1, .cell-2 { animation: exclude-candidate 3s ease 1s forwards; }
-@keyframes exclude-candidate { to { opacity: .42; transform: translateY(8px); } }
 .art-caption { display: flex; align-items: center; gap: 30px; border-top: 1px solid #7d835b; padding-top: 22px; }
 .art-caption > span:first-child { font-size: clamp(25px, 4vw, 56px); letter-spacing: -.05em; }
 .art-caption p { font-size: 14px; line-height: 1.5; }
@@ -88,3 +85,23 @@ footer { border-top: 1px solid #b9b9b3; margin: 0 4%; padding: 26px 0; display: 
   .concept-grid { grid-template-columns: 1fr; gap: 35px; }
   footer { flex-direction: column; }
 }
+
+.lesson-intro p, .lesson-notes p { max-width: 760px; line-height: 1.6; }
+.search-form { display: flex; flex-wrap: wrap; align-items: end; gap: 16px; }
+.search-form label { display: flex; flex-direction: column; gap: 8px; flex: 1 1 160px; }
+.search-form label:first-child { flex: 3 1 280px; }
+.search-form input { width: 100%; padding: 12px; border: 1px solid #555; border-radius: 5px; background: #fff; color: #222; }
+.binary-lesson button { padding: 12px 16px; border: 1px solid #222; border-radius: 5px; background: #222; color: white; cursor: pointer; }
+.binary-lesson button:disabled { opacity: .45; cursor: default; }
+.binary-lesson input:focus-visible { outline: 3px solid #222; outline-offset: 3px; }
+.search-error { color: #8a1b1b; min-height: 24px; }
+.lesson-array { display: flex; gap: 12px; overflow-x: auto; list-style: none; padding: 6px 3px 16px; margin: 30px 0 16px; }
+.lesson-array .array-cell { flex: 1 0 110px; max-width: 200px; }
+.lesson-array strong { font-size: 36px; overflow-wrap: anywhere; letter-spacing: normal; }
+.lesson-array .cell-note { min-height: 28px; line-height: 1.5; }
+.lesson-array .is-excluded { opacity: .5; border-style: dashed; }
+.lesson-array .is-midpoint { background: #222; color: #fff; }
+.lesson-array .is-found { outline: 3px solid #222; outline-offset: 3px; background: #fff; color: #222; }
+.step-explanation { border-top: 1px solid #7d835b; padding-top: 20px; min-height: 140px; line-height: 1.5; }
+.step-controls { display: flex; gap: 12px; flex-wrap: wrap; }
+.lesson-notes { padding: 20px 0; }
