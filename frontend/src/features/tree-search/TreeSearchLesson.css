@@ -1,0 +1,52 @@
+.tree-lesson { padding: 40px 0 65px; border-top: 1px solid #b9b9b3; }
+.tree-intro { display: grid; grid-template-columns: 1fr 1fr; align-items: end; gap: 40px; margin: 30px 0; }
+.tree-intro h2 { font-size: clamp(36px, 5vw, 70px); font-weight: 500; line-height: 1; letter-spacing: -.05em; margin: 16px 0 0; }
+.tree-intro > p { max-width: 480px; line-height: 1.7; font-size: 16px; }
+.tree-toolbar { display: flex; flex-wrap: wrap; align-items: end; gap: 20px; margin: 30px 0 20px; }
+.tree-toolbar label { display: flex; flex-direction: column; gap: 8px; font-size: 13px; }
+.tree-toolbar select { font: inherit; padding: 12px 36px 12px 14px; color: #222; background: #fff; border: 1px solid #999; border-radius: 6px; max-width: 100%; }
+.tree-mode-note { font-size: 10px; letter-spacing: .08em; padding: 14px 0; margin-left: auto; }
+.tree-workspace { display: grid; grid-template-columns: minmax(0, 1fr) 260px; gap: 20px; }
+.tree-canvas { background: #e4e0f0; border: 1px solid #c7bfdc; border-radius: 15px; padding: 26px; }
+.tree-diagram { overflow-x: auto; }
+.tree-diagram:focus-visible { outline: 3px solid #30213f; outline-offset: 3px; }
+.tree-canvas svg { min-width: 500px; display: block; width: 100%; height: auto; margin: 20px 0; overflow: visible; }
+.tree-edge { stroke: #b3a9c9; stroke-width: 3; }
+.tree-edge.traversed { stroke: #5a4477; stroke-width: 4; }
+.tree-node circle { fill: #f8f6ff; stroke: #b1a4c8; stroke-width: 2; transition: fill .2s; }
+.tree-node > text { font-size: 24px; font-weight: 700; fill: #554365; }
+.tree-node.pending circle { stroke: #74549d; stroke-dasharray: 5 3; }
+.tree-node.visited circle { fill: #74549d; stroke: #74549d; }
+.tree-node.visited > text, .tree-node.current > text { fill: #fff; }
+.tree-node.current circle { fill: #30213f; stroke: #a78bc4; stroke-width: 7; }
+.tree-node.found circle { fill: #d0f288; stroke: #305827; stroke-width: 5; }
+.tree-node.found > text { fill: #183520; }
+.tree-node.current > .tree-node-caption, .tree-node.visited > .tree-node-caption, .tree-node .tree-node-caption { font-size: 10px; font-weight: 700; fill: #493b59; letter-spacing: .08em; }
+.tree-inspector { border-radius: 15px; padding: 24px; background: #fff; border: 1px solid #d3cddc; }
+.inspector-heading { display: flex; justify-content: space-between; gap: 10px; font-size: 10px; font-weight: 700; letter-spacing: .05em; }
+.frontier-help { font-size: 12px; color: #655773; line-height: 1.5; }
+.frontier-list { list-style: none; display: flex; flex-wrap: wrap; padding: 0; gap: 7px; }
+.frontier-list li { padding: 10px; min-width: 48px; border: 1px solid #c7bfdc; border-radius: 6px; text-align: center; }
+.frontier-list li:first-child { background: #e4e0f0; border-color: #74549d; }
+.frontier-list span { display: block; font-size: 7px; margin-top: 5px; }
+.empty-frontier { font-size: 13px; line-height: 1.5; }
+.tree-inspector h3 { font-size: 14px; margin-top: 30px; }
+.visit-order { display: flex; flex-wrap: wrap; gap: 7px; padding: 0; list-style: none; }
+.visit-order li { width: 30px; height: 30px; display: grid; place-items: center; background: #74549d; color: white; border-radius: 50%; font-size: 12px; }
+.visit-count { font-size: 12px; color: #655773; margin-top: 24px; }
+.tree-status { margin-top: 20px; min-height: 110px; border-top: 0; padding: 22px; background: #f4f1f8; border-radius: 9px; }
+.tree-controls button { padding: 12px 16px; border: 1px solid #30213f; border-radius: 5px; color: #fff; background: #30213f; cursor: pointer; }
+.tree-controls button:disabled { opacity: .45; cursor: default; }
+.tree-learning { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 35px; }
+.tree-learning h3 { font-size: 17px; }
+.tree-learning p { font-size: 14px; line-height: 1.7; }
+.tree-toolbar select:focus-visible, .array-scroll:focus-visible { outline: 3px solid #222; outline-offset: 4px; }
+@media (max-width: 850px) {
+  .tree-workspace, .tree-intro, .tree-learning { grid-template-columns: minmax(0, 1fr); }
+  .tree-intro { gap: 15px; }
+  .tree-mode-note { margin-left: 0; }
+  .tree-canvas { padding: 16px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .tree-node circle { transition: none; }
+}

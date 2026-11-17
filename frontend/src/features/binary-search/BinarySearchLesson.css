@@ -1,0 +1,50 @@
+.binary-workspace { display: grid; grid-template-columns: minmax(0, 1fr) minmax(240px, .4fr); gap: 20px; }
+.binary-stage { min-width: 0; background: #e5edc9; border: 1px solid #c4cfa1; box-shadow: 0 12px 28px #22222208; }
+.visual-heading { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; font-size: 11px; font-weight: 700; letter-spacing: .08em; }
+.binary-stage .art-heading { margin-top: 22px; }
+.binary-stage .art-heading > span:first-child { font-size: clamp(20px, 3vw, 36px); font-weight: 700; letter-spacing: -.04em; }
+.binary-metrics { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border: 1px solid #bdc89e; border-radius: 10px; background: #ffffff70; margin: 26px 0 10px; }
+.binary-metrics > div { padding: 16px; min-width: 0; }
+.binary-metrics > div + div { border-left: 1px solid #bdc89e; }
+.binary-metrics span { display: block; font-size: 10px; letter-spacing: .06em; }
+.binary-metrics strong { display: block; margin-top: 8px; font-size: 26px; overflow-wrap: anywhere; }
+.binary-metrics small { font-size: 13px; font-weight: 400; }
+.array-scroll { overflow-x: auto; padding: 8px 4px; border-radius: 8px; }
+.binary-stage .lesson-array { overflow: visible; gap: 10px; margin: 20px 0 12px; padding: 6px 4px 16px; }
+.binary-stage .array-cell { border: 1px solid #9cae72; border-radius: 10px; flex: 1 0 90px; background: #f6f9eb; box-shadow: 0 4px 0 #bccb9b; transition: background-color .2s, transform .2s, opacity .2s; }
+.binary-stage .array-cell strong { margin: 20px 0; font-weight: 700; font-size: 32px; }
+.binary-stage .cell-index { font-size: 9px; color: #536237; }
+.binary-stage .cell-note { padding: 5px 3px; background: #dfe8c8; border-radius: 4px; font-weight: 700; font-size: 9px; }
+.binary-stage .is-excluded { background: repeating-linear-gradient(135deg, #e3e7db, #e3e7db 5px, #d8dfcc 5px, #d8dfcc 7px); opacity: .55; box-shadow: none; }
+.binary-stage .is-midpoint { background: #273c2b; color: #fff; transform: translateY(-6px); border-color: #273c2b; box-shadow: 0 6px 0 #122819; }
+.binary-stage .is-midpoint .cell-index { color: #d0e6bb; }
+.binary-stage .is-midpoint .cell-note { background: #425c3b; color: white; }
+.binary-stage .is-found { background: #d0f288; color: #183520; outline: 2px solid #305827; outline-offset: 3px; }
+.binary-stage .is-found .cell-index, .binary-stage .is-found .cell-note { color: #183520; background: transparent; }
+.visual-legend { display: flex; gap: 16px; flex-wrap: wrap; font-size: 11px; color: #44513c; padding: 8px 0 18px; }
+.search-progress { height: 5px; background: #c7d3ab; border-radius: 5px; overflow: hidden; margin-bottom: 22px; }
+.search-progress span { display: block; height: 100%; background: #305827; transition: width .2s; }
+.binary-code { padding: 28px 22px; border-radius: 15px; background: #252d29; color: #f3f5ef; min-width: 0; }
+.lesson-kicker { font-size: 10px; letter-spacing: .12em; font-weight: 700; }
+.binary-code h3 { font-size: 26px; font-weight: 500; line-height: 1.2; }
+.binary-code ol { padding-left: 25px; margin: 30px 0; }
+.binary-code li { padding: 10px 7px; color: #b5c4b8; font-size: 12px; overflow-wrap: anywhere; }
+.binary-code .active-code::marker { color: #d0f288; }
+.binary-code .active-code { background: #d0f288; color: #172d1b; border-radius: 5px; }
+.binary-code > p { font-size: 13px; line-height: 1.7; }
+.binary-invariant { border-top: 1px solid #657267; padding-top: 20px; margin-top: 26px; }
+.binary-invariant span { font-size: 10px; letter-spacing: .1em; display: block; margin-bottom: 10px; color: #d0f288; }
+.binary-invariant strong { font-size: 17px; font-weight: 500; line-height: 1.5; }
+@media (max-width: 1050px) {
+  .binary-workspace { grid-template-columns: minmax(0, 1fr); }
+  .binary-code ol { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 30px; }
+}
+@media (max-width: 550px) {
+  .binary-code ol { display: block; }
+  .binary-metrics > div { padding: 12px 8px; }
+  .binary-metrics span { font-size: 8px; }
+  .binary-stage .array-cell { padding: 10px 6px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .binary-stage .array-cell, .search-progress span { transition: none; }
+}
