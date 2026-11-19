@@ -9,6 +9,7 @@
 .binary-metrics span { display: block; font-size: 10px; letter-spacing: .06em; }
 .binary-metrics strong { display: block; margin-top: 8px; font-size: 26px; overflow-wrap: anywhere; }
 .binary-metrics small { font-size: 13px; font-weight: 400; }
+.array-scroll:focus-visible { outline: 3px solid #222; outline-offset: 4px; }
 .array-scroll { overflow-x: auto; padding: 8px 4px; border-radius: 8px; }
 .binary-stage .lesson-array { overflow: visible; gap: 10px; margin: 20px 0 12px; padding: 6px 4px 16px; }
 .binary-stage .array-cell { border: 1px solid #9cae72; border-radius: 10px; flex: 1 0 90px; background: #f6f9eb; box-shadow: 0 4px 0 #bccb9b; transition: background-color .2s, transform .2s, opacity .2s; }

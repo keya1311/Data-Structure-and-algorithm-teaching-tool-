@@ -6,7 +6,6 @@ function SiteHeader() {
         <a className="nav-link active" href="/" aria-current="page">Home</a>
         <a className="nav-link" href="#topics">Algorithms</a>
         <a className="nav-link" href="#binary-search">Binary search</a>
-        <a className="nav-link" href="#tree-search">Tree search</a>
       </nav>
       <a className="header-action" href="#topics">Explore concepts <span aria-hidden="true">→</span></a>
     </header>
