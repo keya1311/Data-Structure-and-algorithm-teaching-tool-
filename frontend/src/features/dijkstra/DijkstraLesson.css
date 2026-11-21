@@ -1,0 +1,33 @@
+.dijkstra-lesson { padding: 40px 0 65px; border-top: 1px solid #b9b9b3; }
+.graph-toolbar { display: flex; gap: 20px; flex-wrap: wrap; margin: 25px 0; }
+.graph-toolbar label { display: flex; flex-direction: column; gap: 8px; }
+.graph-workspace { display: grid; grid-template-columns: minmax(0, 1fr) 280px; gap: 20px; }
+.weighted-graph { background: #f0e4cf; border: 1px solid #d6c6a9; border-radius: 15px; padding: 24px; min-width: 0; }
+.graph-scroll { overflow-x: auto; }
+.graph-scroll:focus-visible { outline: 3px solid #222; outline-offset: 4px; }
+.weighted-graph svg { display: block; width: 100%; min-width: 540px; margin: 20px 0; }
+.weighted-edge line { stroke: #b4a184; stroke-width: 3; }
+.weighted-edge rect { fill: #fffaf1; stroke: #c2af8f; }
+.weighted-edge text { font-size: 14px; fill: #403728; }
+.weighted-edge.active-edge line { stroke: #a64e17; stroke-width: 6; }
+.weighted-edge.shortest-edge line { stroke: #3c6a2b; stroke-width: 7; }
+.weighted-node circle { fill: #fffaf1; stroke: #9b896c; stroke-width: 2; }
+.weighted-node > text { font-size: 22px; font-weight: 700; fill: #403728; }
+.weighted-node.graph-settled circle { fill: #d0e4a5; stroke: #3c6a2b; stroke-width: 3; }
+.weighted-node.graph-current circle { fill: #403728; stroke: #a68e67; stroke-width: 6; }
+.weighted-node.graph-current > text { fill: white; }
+.weighted-node > .distance-label, .weighted-node.graph-current > .distance-label { font-size: 12px; fill: #403728; }
+.distance-panel { background: #fffaf1; border: 1px solid #d6c6a9; border-radius: 15px; padding: 22px; min-width: 0; }
+.distance-panel h3 { font-size: 14px; }
+.distance-panel p { font-size: 13px; line-height: 1.7; }
+.distance-panel table { border-collapse: collapse; width: 100%; font-size: 12px; }
+.distance-panel caption { text-align: left; font-size: 11px; margin-bottom: 12px; }
+.distance-panel td, .distance-panel th { border-bottom: 1px solid #d6c6a9; padding: 10px 6px; text-align: left; }
+.final-path { font-weight: 700; overflow-wrap: anywhere; }
+.edge-list { font-size: 12px; line-height: 1.8; columns: 2; }
+.weighted-graph summary { cursor: pointer; font-size: 13px; }
+.graph-status { padding: 22px; margin-top: 20px; background: #f5ede0; border-radius: 10px; min-height: 125px; line-height: 1.6; }
+@media (max-width: 850px) {
+  .graph-workspace { grid-template-columns: minmax(0, 1fr); }
+  .weighted-graph { padding: 16px; }
+}

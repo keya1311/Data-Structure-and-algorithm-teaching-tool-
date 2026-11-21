@@ -103,3 +103,11 @@ footer { border-top: 1px solid #b9b9b3; margin: 0 4%; padding: 26px 0; display: 
 .step-explanation { border-top: 1px solid #7d835b; padding-top: 20px; min-height: 140px; line-height: 1.5; }
 .step-controls { display: flex; gap: 12px; flex-wrap: wrap; }
 .lesson-notes { padding: 20px 0; }
+
+.tree-thumbnail { background: #e4e0f0; flex-direction: column; gap: 22px; }
+.tree-thumbnail > div { display: flex; gap: 50px; }
+.tree-thumbnail span { display: grid; place-items: center; width: 40px; height: 40px; border: 1px solid #74549d; border-radius: 50%; background: #f8f6ff; }
+
+.graph-thumbnail { background: #f0e4cf; gap: 15px; }
+.graph-thumbnail > span { display: grid; place-items: center; width: 45px; height: 45px; border: 1px solid #9b896c; border-radius: 50%; background: #fffaf1; }
+.graph-thumbnail > small { border-bottom: 2px solid #9b896c; padding: 5px; }

@@ -16,6 +16,7 @@ export default function BinarySearchLesson() {
   const [position, setPosition] = useState(0)
   const [error, setError] = useState('')
   const step = steps[position]
+  const stageCost = !step ? 'Before Start: parsing and validation scan n inputs in O(n).' : step.operation === 'initialise' ? 'Initialise low/high in O(1), after O(n) validation and target-membership checks.' : step.operation === 'midpoint' ? 'Calculate one midpoint in O(1).' : step.operation === 'compare' ? 'Compare the target with one value in O(1).' : step.operation === 'found' ? 'Report the matching index in O(1).' : 'Update one boundary in O(1). The candidate interval is roughly halved per search round.'
   const remaining = step ? step.high - step.low + 1 : values.length
   const compared = steps.slice(0, position + 1).filter(item => item.operation === 'compare').length
   const progress = steps.length ? ((position + 1) / steps.length) * 100 : 0
@@ -119,6 +120,11 @@ export default function BinarySearchLesson() {
         <p>The highlighted line matches the current step. Low and high enclose every remaining candidate; the midpoint is recalculated after either bound changes.</p>
         <div className="binary-invariant"><span>THE RULE TO KEEP</span><strong>If the target exists, it stays between low and high.</strong></div>
       </aside>
+      </div>
+      <div className="complexity-panel" aria-label="Binary search complexity">
+        <article><h3>Current stage</h3><p>{stageCost}</p></article>
+        <article><h3>Whole search</h3><p>Best O(1), average/worst O(log n) comparisons; O(1) auxiliary space for iterative binary search. This implementation additionally performs O(n) input checks before searching.</p></article>
+        <article><h3>Replay overhead</h3><p>n is the number of values. This engine records O(log n) constant-size snapshots in the worst case. Each screen update redraws the array; changing a replay cursor does not rerun the search.</p></article>
       </div>
       <div className="lesson-notes">
         <h3>Why does it work?</h3>
