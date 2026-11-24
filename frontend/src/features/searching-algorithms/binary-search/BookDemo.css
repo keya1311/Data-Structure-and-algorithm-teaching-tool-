@@ -1,0 +1,189 @@
+.book-stage {
+  margin: 30px 0 12px;
+  perspective: 1200px;
+}
+.book-open {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  max-width: 760px;
+  min-height: 360px;
+  margin: auto;
+  background: #31564e;
+  border: 9px solid #31564e;
+  border-radius: 8px 16px 16px 8px;
+  box-shadow:
+    0 12px 0 #25423c,
+    0 18px 30px #1c302c25;
+  position: relative;
+}
+.book-open::after {
+  content: "";
+  position: absolute;
+  left: calc(50% - 10px);
+  top: 0;
+  bottom: 0;
+  width: 20px;
+  background: linear-gradient(90deg, transparent, #4f40232e, transparent);
+  pointer-events: none;
+}
+.book-page {
+  padding: 28px;
+  position: relative;
+  background: #fff9e8;
+  color: #443a2a;
+  overflow: hidden;
+}
+.book-left {
+  border-radius: 2px 0 0 2px;
+  background: linear-gradient(90deg, #fff9e8 85%, #e9dec2);
+  display: flex;
+  flex-direction: column;
+}
+.book-right {
+  border-radius: 0 7px 7px 0;
+  background: linear-gradient(90deg, #eadfc3, #fff9e8 12%);
+  box-shadow: inset -5px -5px 0 #e5d8b8;
+}
+.book-eyebrow {
+  font:
+    10px/1.5 system-ui,
+    sans-serif;
+  letter-spacing: 0.1em;
+  margin: 0 0 20px;
+}
+.book-page h3 {
+  font:
+    500 clamp(20px, 3.5vw, 36px)/1.15 Georgia,
+    serif;
+  margin: 12px 0 20px;
+  overflow-wrap: anywhere;
+}
+.book-page > p:not(.book-eyebrow) {
+  font:
+    15px/1.6 Georgia,
+    serif;
+}
+.book-target {
+  border-top: 1px solid #d8cba9;
+  border-bottom: 1px solid #d8cba9;
+  padding: 10px 0;
+}
+.book-range {
+  margin-top: 0;
+}
+.book-range span {
+  font-style: italic;
+  font-size: 12px;
+  color: #76674f;
+}
+.book-footer {
+  font:
+    10px/1.5 system-ui,
+    sans-serif;
+  margin-top: auto;
+  padding-top: 15px;
+}
+.book-page-number {
+  position: absolute;
+  right: 25px;
+  bottom: 22px;
+  font:
+    14px Georgia,
+    serif;
+}
+.book-print-lines {
+  display: grid;
+  gap: 12px;
+  margin-top: 30px;
+}
+.book-print-lines i {
+  display: block;
+  height: 3px;
+  background: #ded2b5;
+}
+.book-print-lines i:nth-child(2n) {
+  width: 80%;
+}
+.book-found h3 {
+  color: #2f6549;
+  text-decoration: underline;
+  text-decoration-color: #b1c899;
+  text-underline-offset: 8px;
+}
+.turning-page {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  transform-origin: left center;
+  background: linear-gradient(90deg, #dccca4, #fff9e8);
+  animation: book-turn 0.7s ease-out both;
+  backface-visibility: hidden;
+}
+@keyframes book-turn {
+  from {
+    transform: rotateY(0deg);
+    opacity: 1;
+  }
+  to {
+    transform: rotateY(-105deg);
+    opacity: 0;
+  }
+}
+.book-stage figcaption {
+  text-align: center;
+  margin-top: 26px;
+  font-size: 13px;
+}
+.book-page-strip {
+  list-style: none;
+  display: flex;
+  gap: 5px;
+  padding: 10px 0;
+  overflow-x: auto;
+}
+.book-page-strip li {
+  flex: 1 0 30px;
+  border: 1px solid #afbea9;
+  background: #f3f8ec;
+  border-radius: 3px;
+  padding: 6px 3px;
+  text-align: center;
+}
+.book-page-strip small {
+  display: block;
+  font-size: 9px;
+  margin-top: 5px;
+}
+.book-page-strip .discarded-page {
+  background: #e5e5e5;
+  color: #666;
+  border-style: dashed;
+}
+.book-page-strip .opened-page {
+  background: #31564e;
+  color: white;
+}
+@media (max-width: 550px) {
+  .book-open {
+    border-width: 5px;
+    min-height: 350px;
+  }
+  .book-page {
+    padding: 16px 12px 40px;
+  }
+  .book-page > p:not(.book-eyebrow) {
+    font-size: 13px;
+  }
+  .book-eyebrow {
+    font-size: 8px;
+  }
+  .book-print-lines {
+    gap: 8px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .turning-page {
+    animation: none;
+    display: none;
+  }
+}
