@@ -1,9 +1,9 @@
 import type { BinarySearchStep } from "./types";
 
 export function binarySearch(
-  values: number[],
+  values: number[], 
   target: number,
-): BinarySearchStep[] {
+): BinarySearchStep[] {  //The function returns type BinarySearchStep
   if (!Number.isFinite(target)) {
     throw new Error("The target must be a finite number.");
   }
@@ -11,7 +11,7 @@ export function binarySearch(
     if (!Number.isFinite(values[index])) {
       throw new Error("Every array value must be a finite number.");
     }
-    if (index > 0 && values[index] < values[index - 1]) {
+    if (index > 0 && values[index] < values[index - 1]) { //This checks that the array is sorted
       throw new Error(
         "Binary search requires an array sorted in ascending order. Sort the values before starting.",
       );
@@ -28,7 +28,7 @@ export function binarySearch(
       mid: null,
       explanation: values.length
         ? `Start with all candidates: low = ${low}, high = ${high}.`
-        : "The array is empty, so there are no candidates.",
+        : "The array is empty, so there are no candidates.", //Checking if there is an existing array then low =value of low etc. If not, display a message to the user. 
     },
   ];
   while (low <= high) {
@@ -99,5 +99,5 @@ export function binarySearch(
     mid: null,
     explanation: `${target} is not in the array. Low (${low}) is greater than high (${high}), so no candidates remain.`,
   });
-  return steps;
+  return steps;   //if the number is not in the array
 }

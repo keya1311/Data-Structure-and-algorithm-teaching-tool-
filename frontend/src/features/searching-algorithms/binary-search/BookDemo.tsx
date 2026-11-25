@@ -27,7 +27,7 @@ export default function BookDemo() {
           onChange={(event) => setTarget(event.target.value)}
         >
           {bookEntries.map((entry) => (
-            <option key={entry.word}>{entry.word}</option>
+            <option key={entry.word}>{entry.word}</option> //You turn each of the words to a glossary object.
           ))}
           <option value="Zebra">Zebra (not in this glossary)</option>
         </select>

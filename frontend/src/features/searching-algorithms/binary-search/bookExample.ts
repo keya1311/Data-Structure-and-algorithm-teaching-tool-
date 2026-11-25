@@ -1,7 +1,7 @@
 import { binarySearch } from "./binarySearch";
 import type { BinarySearchStep } from "./types";
 
-export const bookEntries = [
+export const bookEntries = [  //this is the glossary of terms of the book 
   {
     word: "Algorithm",
     definition: "A sequence of instructions for solving a problem.",
@@ -58,9 +58,9 @@ export const bookEntries = [
 
 export function createBookTrace(target: string) {
   const comparisons = bookEntries.map((entry) =>
-    Math.sign(entry.word.localeCompare(target, "en")),
+    Math.sign(entry.word.localeCompare(target, "en")), // converts the glossary to an array of -1,0 and 1. If it's before then it's -1, if its after the word it's 1.
   );
-  return binarySearch(comparisons, 0);
+  return binarySearch(comparisons, 0);   //can do a binary search with a numerical array, e.g [-1,-1,-1,0,1] 0 would be the word we are searching for
 }
 
 export function bookExplanation(step: BinarySearchStep, target: string) {
